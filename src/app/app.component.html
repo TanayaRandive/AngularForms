@@ -1,0 +1,54 @@
+<!--
+a
+<p>forms works!</p>
+<p>forms works!</p>
+<style>
+    span{
+        color: red;
+    }
+</style>
+<h1>Template Driven Forms</h1>
+<form #formData="ngForm" (ngSubmit)="addDetails(formData.value)" novalidate>
+    <div>
+        <p>
+            <input type="text" required #fname="ngModel" name="fname" placeholder="Enter First Name" ngModel>
+        </p>
+        <p>
+            <span *ngIf="fname.invalid && fname.touched">*Please enter first name </span>
+        </p>
+    </div>
+
+    <div>
+        <p>
+            <input type="text" required #lname="ngModel" name="lname" placeholder="Enter Last Name" ngModel>
+        </p>
+
+        <p>
+            <span *ngIf="lname.invalid && lname.touched">*Please enter last name</span>
+        </p>
+    </div>
+
+    <div>
+        <p>
+            <input type="password" name="password" minlength="4" required #password="ngModel" placeholder="Enter password" ngModel />
+        </p>
+        <p>
+            <span *ngIf="password.invalid && password.touched">*Password has minimum 4 characters</span>
+        </p>
+    </div>
+
+    <div>
+        <button type="submit" [disabled]="formData.invalid">Submit</button>
+    </div>
+</form>
+
+<div>
+    <h2>Your Details</h2>
+    <p>{{userDetails.fname}}</p>
+    <p>{{userDetails.lname}}</p>
+    <p>{{userDetails.password}}</p>
+</div>
+a
+-->
+<h1>Root</h1>
+<app-tforms></app-tforms>
